@@ -1,29 +1,32 @@
-// const sampleCategories = [
-//   {
-//     id: 0,
-//     name: "Fruits",
-//     type: 0,
-//     items: [
-//       { name: "apple", done: true },
-//       { name: "banana", done: false },
-//       { name: "orange", done: false },
-//     ],
-//   },
-//   {
-//     id: 1,
-//     name: "Exercises",
-//     type: 0,
-//     items: [
-//       { name: "Backflip", done: true },
-//       { name: "Front Flip", done: false },
-//       { name: "Jumpin Jack", done: false },
-//     ],
-//   },
-// ];
+const sampleCategories = [
+  {
+    id: 0,
+    name: "Fruits",
+    type: 0,
+    items: [
+      { name: "apple", done: true },
+      { name: "banana", done: false },
+      { name: "orange", done: false },
+    ],
+  },
+  {
+    id: 1,
+    name: "Exercises",
+    type: 0,
+    items: [
+      { name: "Backflip", done: true },
+      { name: "Front Flip", done: false },
+      { name: "Jumpin Jack", done: false },
+    ],
+  },
+];
 
-// localStorage.setItem("Categories", JSON.stringify(sampleCategories));
+//localStorage.setItem("Categories", JSON.stringify(sampleCategories));
 
-const Categories = JSON.parse(localStorage.getItem("Categories"));
+let Categories = JSON.parse(localStorage.getItem("Categories"));
+
+if (Categories === null)
+  Categories = JSON.parse(localStorage.getItem("Categories"));
 
 function updateLocalCategories() {
   localStorage.setItem("Categories", JSON.stringify(Categories));
