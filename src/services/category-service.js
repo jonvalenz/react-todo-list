@@ -21,12 +21,10 @@ const sampleCategories = [
   },
 ];
 
-//localStorage.setItem("Categories", JSON.stringify(sampleCategories));
-
 let Categories = JSON.parse(localStorage.getItem("Categories"));
 
 if (Categories === null)
-  Categories = JSON.parse(localStorage.getItem("Categories"));
+  localStorage.setItem("Categories", JSON.stringify(sampleCategories));
 
 function updateLocalCategories() {
   localStorage.setItem("Categories", JSON.stringify(Categories));
